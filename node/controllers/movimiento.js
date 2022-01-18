@@ -53,7 +53,7 @@ const modificar = (req, res) => {
   // para elegir que campos se van a modificar
   const campo = req.body.campo;
   const nuevo_valor = req.body.nuevo_valor;
-  const sql = `UPDATE movimiento SET ${campo}=${nuevo_valor} WHERE id = ${id} `;
+  const sql = `UPDATE movimiento SET ${campo}='${nuevo_valor}' WHERE id = ${id} `;
   conexion.query(sql, (err) => {
     if (err) {
       res.send("Error en la modificacion " + err);
